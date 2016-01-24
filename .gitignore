@@ -31,3 +31,19 @@ $RECYCLE.BIN/
 
 # sftp configuration file
 sftp-config.json
+
+# Dependency directory
+node_modules
+
+# Optional npm cache directory
+.npm
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Logs
+logs
+*.log
+npm-debug.log*
