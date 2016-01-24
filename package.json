@@ -1,0 +1,19 @@
+{
+  "name": "cssrecipes",
+  "version": "0.0.0",
+  "description": "Some essential CSS tips for UI developers",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/woneob/cssrecipes.git"
+  },
+  "keywords": [
+    "css",
+    "ui"
+  ],
+  "author": "1UP <1up@1upz.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/woneob/cssrecipes/issues"
+  },
+  "homepage": "https://github.com/woneob/cssrecipes"
+}
