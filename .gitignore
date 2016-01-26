@@ -47,3 +47,6 @@ pids
 logs
 *.log
 npm-debug.log*
+
+# Distribution
+dist
