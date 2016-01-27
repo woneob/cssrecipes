@@ -3,7 +3,6 @@ var gulp = require('gulp');
 var nunjucksRender = require('gulp-nunjucks-render');
 var htmlmin = require('gulp-htmlmin');
 var gulpif = require('gulp-if');
-var ghPages = require('gulp-gh-pages');
 var seq = require('gulp-sequence');
 var fs = require('fs');
 var md = require('markdown').markdown;
@@ -55,11 +54,5 @@ gulp.task('template', function() {
     .pipe(gulp.dest(paths.dist));
 });
 
-gulp.task('gh-pages', function() {
-  return gulp.src('dist/**/*')
-    .pipe(ghPages());
-});
-
 /* Global tasks */
 gulp.task('default', ['template']);
-gulp.task('deploy', seq('template', 'gh-pages'));
