@@ -1,9 +1,8 @@
-'use strict';
-
 /* Dependencies */
 var gulp = require('gulp');
-var jade = require('gulp-jade');
+var nunjucksRender = require('gulp-nunjucks-render');
 var htmlmin = require('gulp-htmlmin');
+var gulpif = require('gulp-if');
 var fs = require('fs');
 var md = require('markdown').markdown;
 
@@ -31,13 +30,28 @@ var opts = {
 };
 
 /* Dist Tasks */
-gulp.task('html', function() {
+gulp.task('template', function() {
+  nunjucksRender.nunjucks.configure([paths.src], {
+    watch: false
+  });
+
   return gulp
-    .src(paths.src + '*.jade')
-    .pipe(jade(opts.jade))
-    .pipe(htmlmin(opts.htmlmin))
+    .src([
+      '**/*',
+      '!styles/**/*',
+      '!script/**/*',
+      '!images/**/*'
+    ], {
+      cwd: paths.src
+    })
+    .pipe(nunjucksRender({
+      inheritExtension: true,
+      site: pkgInfo,
+      contents: contents
+    }))
+    .pipe(gulpif('*.html', htmlmin(opts.htmlmin)))
     .pipe(gulp.dest(paths.dist));
 });
 
 /* Global tasks */
-gulp.task('default', ['html']);
+gulp.task('default', ['template']);
