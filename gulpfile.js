@@ -4,6 +4,7 @@ var nunjucks = require('gulp-nunjucks');
 var htmlmin = require('gulp-htmlmin');
 var gulpif = require('gulp-if');
 var sass = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
 var seq = require('gulp-sequence');
 var del = require('del');
 var fs = require('fs');
@@ -62,12 +63,16 @@ gulp.task('styles', function() {
       ],
       outputStyle: 'compact',
       errLogToConsole: true
+    },
+    autoprefixer: {
+      remove: false
     }
   };
 
   return gulp
     .src(opts.globs, opts.src)
     .pipe(sass(opts.sass).on('error', sass.logError))
+    .pipe(autoprefixer(opts.autoprefixer))
     .pipe(gulp.dest(paths.dist));
 });
 
