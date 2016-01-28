@@ -5,6 +5,7 @@ var htmlmin = require('gulp-htmlmin');
 var gulpif = require('gulp-if');
 var sass = require('gulp-sass');
 var seq = require('gulp-sequence');
+var del = require('del');
 var fs = require('fs');
 var md = require('markdown').markdown;
 
@@ -68,6 +69,10 @@ gulp.task('styles', function() {
     .src(opts.globs, opts.src)
     .pipe(sass(opts.sass).on('error', sass.logError))
     .pipe(gulp.dest(paths.dist));
+});
+
+gulp.task('clean', function() {
+  return del(paths.dist);
 });
 
 /* Global tasks */
