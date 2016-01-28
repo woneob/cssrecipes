@@ -3,6 +3,7 @@ var gulp = require('gulp');
 var nunjucks = require('gulp-nunjucks');
 var htmlmin = require('gulp-htmlmin');
 var gulpif = require('gulp-if');
+var sass = require('gulp-sass');
 var seq = require('gulp-sequence');
 var fs = require('fs');
 var md = require('markdown').markdown;
@@ -17,31 +18,57 @@ var paths = {
   dist: 'dist/'
 };
 
-var opts = {
-  htmlmin: {
-    removeComments: false,
-    collapseWhitespace: true
-  }
-};
-
 /* Dist Tasks */
 gulp.task('template', function() {
-  return gulp
-    .src([
+  var opts = {
+    globs: [
       '**/*',
       '!styles/**/*',
       '!script/**/*',
       '!images/**/*'
-    ], {
-      cwd: paths.src
-    })
-    .pipe(nunjucks.compile({
+    ],
+    src: {
+      cwd: paths.src,
+      base: paths.src
+    },
+    nunjucks: {
       site: pkgInfo,
       contents: contents
-    }))
+    },
+    htmlmin: {
+      removeComments: false,
+      collapseWhitespace: true
+    }
+  };
+
+  return gulp
+    .src(opts.globs, opts.src)
+    .pipe(nunjucks.compile(opts.nunjucks))
     .pipe(gulpif('*.html', htmlmin(opts.htmlmin)))
     .pipe(gulp.dest(paths.dist));
 });
 
+gulp.task('styles', function() {
+  var opts = {
+    globs: '**/[^_]*.scss',
+    src: {
+      cwd: paths.src + '/styles',
+      base: paths.src
+    },
+    sass: {
+      includePaths: [
+        paths.src + '/styles/include/'
+      ],
+      outputStyle: 'compact',
+      errLogToConsole: true
+    }
+  };
+
+  return gulp
+    .src(opts.globs, opts.src)
+    .pipe(sass(opts.sass).on('error', sass.logError))
+    .pipe(gulp.dest(paths.dist));
+});
+
 /* Global tasks */
-gulp.task('default', ['template']);
+gulp.task('default', ['template', 'styles']);
