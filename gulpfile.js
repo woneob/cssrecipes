@@ -61,7 +61,7 @@ gulp.task('styles', function() {
       includePaths: [
         paths.src + '/styles/include/'
       ],
-      outputStyle: 'compact',
+      outputStyle: 'compressed',
       errLogToConsole: true
     },
     autoprefixer: {
