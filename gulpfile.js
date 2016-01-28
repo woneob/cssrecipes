@@ -1,6 +1,6 @@
 /* Dependencies */
 var gulp = require('gulp');
-var nunjucksRender = require('gulp-nunjucks-render');
+var nunjucks = require('gulp-nunjucks');
 var htmlmin = require('gulp-htmlmin');
 var gulpif = require('gulp-if');
 var seq = require('gulp-sequence');
@@ -32,10 +32,6 @@ var opts = {
 
 /* Dist Tasks */
 gulp.task('template', function() {
-  nunjucksRender.nunjucks.configure([paths.src], {
-    watch: false
-  });
-
   return gulp
     .src([
       '**/*',
@@ -45,8 +41,7 @@ gulp.task('template', function() {
     ], {
       cwd: paths.src
     })
-    .pipe(nunjucksRender({
-      inheritExtension: true,
+    .pipe(nunjucks.compile({
       site: pkgInfo,
       contents: contents
     }))
