@@ -18,12 +18,6 @@ var paths = {
 };
 
 var opts = {
-  jade: {
-    locals: {
-      pkg: pkgInfo,
-      contents: contents
-    }
-  },
   htmlmin: {
     removeComments: false,
     collapseWhitespace: true
