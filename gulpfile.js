@@ -35,7 +35,8 @@ gulp.task('template', function() {
     },
     nunjucks: {
       site: pkgInfo,
-      contents: contents
+      contents: contents,
+      datetime: new Date().toISOString()
     },
     htmlmin: {
       removeComments: false,
