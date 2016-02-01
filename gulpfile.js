@@ -6,6 +6,7 @@ var gulpif = require('gulp-if');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var jshint = require('gulp-jshint');
+var uglify = require('gulp-uglify');
 var seq = require('gulp-sequence');
 var del = require('del');
 var fs = require('fs');
@@ -94,6 +95,7 @@ gulp.task('scripts', function() {
     .src(opts.globs, opts.src)
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
+    .pipe(uglify())
     .pipe(gulp.dest(paths.dist));
 });
 
