@@ -5,6 +5,7 @@ var htmlmin = require('gulp-htmlmin');
 var gulpif = require('gulp-if');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
+var jshint = require('gulp-jshint');
 var seq = require('gulp-sequence');
 var del = require('del');
 var fs = require('fs');
@@ -77,9 +78,25 @@ gulp.task('styles', function() {
     .pipe(gulp.dest(paths.dist));
 });
 
+gulp.task('scripts', function() {
+  var opts = {
+    globs: '**/*.js',
+    src: {
+      cwd: paths.src + '/scripts',
+      base: paths.src
+    }
+  };
+
+  return gulp
+    .src(opts.globs, opts.src)
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'))
+    .pipe(gulp.dest(paths.dist));
+});
+
 gulp.task('clean', function() {
   return del(paths.dist);
 });
 
 /* Global tasks */
-gulp.task('default', ['template', 'styles']);
+gulp.task('default', ['template', 'styles', 'scripts']);
