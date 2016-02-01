@@ -2,7 +2,6 @@
 var gulp = require('gulp');
 var nunjucks = require('gulp-nunjucks');
 var htmlmin = require('gulp-htmlmin');
-var gulpif = require('gulp-if');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var jshint = require('gulp-jshint');
@@ -49,7 +48,7 @@ gulp.task('template', function() {
   return gulp
     .src(opts.globs, opts.src)
     .pipe(nunjucks.compile(opts.nunjucks))
-    .pipe(gulpif('*.html', htmlmin(opts.htmlmin)))
+    .pipe(htmlmin(opts.htmlmin))
     .pipe(gulp.dest(paths.dist));
 });
 
