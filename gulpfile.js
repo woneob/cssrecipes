@@ -30,12 +30,7 @@ gulp.task('clean', function() {
 
 gulp.task('template', function() {
   var opts = {
-    globs: [
-      '**/*',
-      '!styles/**/*',
-      '!scripts/**/*',
-      '!images/**/*'
-    ],
+    globs: '**/*.html',
     src: {
       cwd: paths.src,
       base: paths.src
