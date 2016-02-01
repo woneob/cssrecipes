@@ -24,6 +24,10 @@ var paths = {
 };
 
 /* Dist Tasks */
+gulp.task('clean', function() {
+  return del(paths.dist);
+});
+
 gulp.task('template', function() {
   var opts = {
     globs: [
@@ -104,8 +108,20 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest(paths.dist));
 });
 
-gulp.task('clean', function() {
-  return del(paths.dist);
+gulp.task('copy', function() {
+  var opts = {
+    globs: [
+      '**/*.min.js'
+    ],
+    src: {
+      cwd: paths.src,
+      base: paths.src
+    }
+  };
+
+  return gulp
+    .src(opts.globs, opts.src)
+    .pipe(gulp.dest(paths.dist));
 });
 
 /* Global tasks */
