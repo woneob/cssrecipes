@@ -80,7 +80,10 @@ gulp.task('styles', function() {
 
 gulp.task('scripts', function() {
   var opts = {
-    globs: '**/*.js',
+    globs: [
+      '**/*.js',
+      '!**/*.min.js'
+    ],
     src: {
       cwd: paths.src + '/scripts',
       base: paths.src
