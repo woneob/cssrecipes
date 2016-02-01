@@ -125,4 +125,9 @@ gulp.task('copy', function() {
 });
 
 /* Global tasks */
-gulp.task('default', ['template', 'styles', 'scripts']);
+gulp.task('default', seq('clean', [
+  'template',
+  'styles',
+  'scripts',
+  'copy'
+]));
