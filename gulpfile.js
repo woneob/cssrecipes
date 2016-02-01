@@ -27,7 +27,7 @@ gulp.task('template', function() {
     globs: [
       '**/*',
       '!styles/**/*',
-      '!script/**/*',
+      '!scripts/**/*',
       '!images/**/*'
     ],
     src: {
