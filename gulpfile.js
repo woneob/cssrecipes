@@ -7,6 +7,7 @@ var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var jshint = require('gulp-jshint');
 var uglify = require('gulp-uglify');
+var rename = require('gulp-rename');
 var seq = require('gulp-sequence');
 var del = require('del');
 var fs = require('fs');
@@ -88,6 +89,9 @@ gulp.task('scripts', function() {
     src: {
       cwd: paths.src + '/scripts',
       base: paths.src
+    },
+    rename: {
+      suffix: '.min'
     }
   };
 
@@ -96,6 +100,7 @@ gulp.task('scripts', function() {
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
     .pipe(uglify())
+    .pipe(rename(opts.rename))
     .pipe(gulp.dest(paths.dist));
 });
 
