@@ -1,3 +1,5 @@
+'use strict';
+
 /* Dependencies */
 var gulp = require('gulp');
 var nunjucks = require('gulp-nunjucks');
