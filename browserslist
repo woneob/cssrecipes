@@ -8,3 +8,4 @@ chrome >= 4
 opera >= 20
 op_mini >= 5.0
 op_mob >=22
+edge >= 13
