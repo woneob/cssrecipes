@@ -1,11 +1,9 @@
 # Browsers that we support
 
-ios_saf >= 5.0
-android >= 3
+ios_saf >= 7.0
+android >= 4
 ie >= 10
-firefox >= 30
-chrome >= 4
-opera >= 20
-op_mini >= 5.0
-op_mob >=22
 edge >= 13
+firefox >= 40
+chrome >= 40
+opera >= 30
