@@ -5,6 +5,7 @@ var gulp = require('gulp');
 var nunjucks = require('gulp-nunjucks');
 var htmlmin = require('gulp-htmlmin');
 var sass = require('gulp-sass');
+var sassLint = require('gulp-sass-lint');
 var autoprefixer = require('gulp-autoprefixer');
 var jshint = require('gulp-jshint');
 var uglify = require('gulp-uglify');
@@ -75,6 +76,9 @@ gulp.task('styles', function() {
 
   return gulp
     .src(opts.globs, opts.src)
+    .pipe(sassLint())
+    .pipe(sassLint.format())
+    .pipe(sassLint.failOnError())
     .pipe(sass(opts.sass).on('error', sass.logError))
     .pipe(autoprefixer(opts.autoprefixer))
     .pipe(gulp.dest(paths.dist));
