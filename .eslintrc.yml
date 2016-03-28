@@ -36,6 +36,10 @@ rules:
     - 2
     - unix
 
+  one-var:
+    - 1
+    - never
+
   comma-style:
     - 1
     - last
