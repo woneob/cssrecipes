@@ -66,12 +66,6 @@ rules:
     - 1
     - always
 
-  keyword-spacing:
-    - 1
-    -
-      before: true
-      after: true
-
   space-in-parens:
     - 1
     - never
@@ -81,3 +75,9 @@ rules:
     - never
 
   no-trailing-spaces: 1
+
+  keyword-spacing:
+    - 2
+    -
+      before: true
+      after: true
