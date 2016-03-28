@@ -1,8 +1,6 @@
 # ESLint config
 # http://eslint.org/
 
-root: true
-
 env:
   node: true
   browser: true
@@ -10,7 +8,8 @@ env:
   es6: true
 
 rules:
-  strict: 2
+  strict:
+    - 0
 
   comma-dangle:
     - 2
@@ -35,6 +34,10 @@ rules:
   linebreak-style:
     - 2
     - unix
+
+  one-var:
+    - 1
+    - never
 
   comma-style:
     - 1
@@ -62,12 +65,6 @@ rules:
     - 1
     - always
 
-  keyword-spacing:
-    - 1
-    -
-      before: true
-      after: true
-
   space-in-parens:
     - 1
     - never
@@ -77,3 +74,9 @@ rules:
     - never
 
   no-trailing-spaces: 1
+
+  keyword-spacing:
+    - 2
+    -
+      before: true
+      after: true
