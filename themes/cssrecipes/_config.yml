@@ -10,12 +10,12 @@ menu:
   Archives: /archives
 
 # Miscelaneous
-favicon: /favicon.ico
+favicon: /images/icons/favicon.ico
 
 # stylesheets loaded in the <head>
 stylesheets:
-- /cssrecipes/css/cssrecipes.css
+- /cssrecipes/styles/styles.css
 
 # scripts loaded in the end of the body
 scripts:
-- /cssrecipes/js/cssrecipes.js
+- /cssrecipes/scripts/common.js
