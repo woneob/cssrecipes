@@ -75,6 +75,8 @@ deploy:
 node_sass:
   debug: false
   outputStyle: compressed
+  includePaths:
+    - source/styles/_base
 
 autoprefixer:
   cascade: false
