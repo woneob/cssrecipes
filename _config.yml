@@ -75,3 +75,10 @@ deploy:
 node_sass:
   debug: false
   outputStyle: compressed
+
+autoprefixer:
+  cascade: false
+  remove: false
+  exclude:
+    - '*.min.js'
+
