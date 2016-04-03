@@ -5,9 +5,6 @@ language: ko
 # main menu navigation
 menu:
   Home: /
-  About: /about
-  Contact: /contact
-  Archives: /archives
 
 # Miscelaneous
 favicon: /cssrecipes/images/icons/favicon.ico
