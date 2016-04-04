@@ -124,6 +124,7 @@ rules:
     - extra-properties:
       - 'touch-callout'
       - 'overflow-scrolling'
+      - 'tab-highlight-color'
 
   no-qualifying-elements:
     - 0
