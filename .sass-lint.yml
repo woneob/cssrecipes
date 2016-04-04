@@ -204,7 +204,7 @@ rules:
 
   space-before-bang:
     - 1
-    - include: false
+    - include: true
 
   space-before-brace:
     - 1
