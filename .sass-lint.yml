@@ -165,6 +165,7 @@ rules:
   property-units:
     - 1
     - global:
+        - px
         - em
         - rem
         - vh
