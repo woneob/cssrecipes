@@ -24,9 +24,7 @@ rules:
     - 0
 
   clean-import-paths:
-    - 1
-    - filename-extension: false
-      leading-underscore: false
+    - 0
 
   empty-line-between-blocks:
     - 1
