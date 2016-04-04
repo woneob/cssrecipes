@@ -50,9 +50,8 @@ rules:
     - 0
 
   function-name-format:
-    - 1
+    - 0
     - allow-leading-underscore: true
-      convention: camelcase
 
   hex-length:
     - 1
@@ -63,9 +62,8 @@ rules:
     - style: lowercase
 
   id-name-format:
-    - 1
+    - 0
     - allow-leading-underscore: true
-      convention: camelcase
 
   indentation:
     - 1
@@ -76,9 +74,8 @@ rules:
     - include: false
 
   mixin-name-format:
-    - 1
+    - 0
     - allow-leading-underscore: true
-      convention: camelcase
 
   mixins-before-declarations:
     - 1
@@ -153,8 +150,7 @@ rules:
     - 1
 
   placeholder-name-format:
-    - 1
-    - convention: camelcase
+    - 0
 
   property-sort-order:
     - 0
@@ -234,9 +230,8 @@ rules:
     - properties: []
 
   variable-name-format:
-    - 1
+    - 0
     - allow-leading-underscore: true
-      convention: camelcase
 
   zero-unit:
     - 1
