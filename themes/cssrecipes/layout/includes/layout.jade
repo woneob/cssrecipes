@@ -5,12 +5,11 @@ html(lang=config.language)
     title
       = page.title ? page.title + ' - ' : ''
       = config.title
+    link(
+      rel='stylesheet'
+      href='/cssrecipes/styles/styles.css')
 
-    if theme.stylesheets !== undefined && theme.stylesheets.length > 0
-      //- stylesheets list from config.yml
-      each url in theme.stylesheets
-        link(rel='stylesheet', href=url)
-    link(rel="icon", href= theme.favicon)
+
   body
     #menu-outer
       nav#menu-inner

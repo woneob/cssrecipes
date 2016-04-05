@@ -9,10 +9,6 @@ menu:
 # Miscelaneous
 favicon: /cssrecipes/images/icons/favicon.ico
 
-# stylesheets loaded in the <head>
-stylesheets:
-- /cssrecipes/styles/styles.css
-
 # scripts loaded in the end of the body
 scripts:
 - /cssrecipes/scripts/common.js
