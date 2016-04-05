@@ -5,10 +5,3 @@ language: ko
 # main menu navigation
 menu:
   Home: /
-
-# Miscelaneous
-favicon: /cssrecipes/images/icons/favicon.ico
-
-# scripts loaded in the end of the body
-scripts:
-- /cssrecipes/scripts/common.js
