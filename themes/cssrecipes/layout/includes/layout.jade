@@ -9,6 +9,12 @@ html(lang=config.language)
       rel='stylesheet'
       href='/cssrecipes/styles/styles.css')
 
+    if page.css !== undefined && page.css.length
+      each css in page.css
+        link(
+          rel='stylesheet'
+          href=css)
+
     link(
       rel='icon'
       href='/cssrecipes/images/icons/favicon.ico')
