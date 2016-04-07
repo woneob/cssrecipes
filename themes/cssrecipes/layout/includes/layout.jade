@@ -9,7 +9,7 @@ html(lang=config.language)
 
     meta(
       name='description'
-      content=page.description || config.description)
+      content=truncate(page.description || config.description, {length: 160}))
 
     link(
       rel='stylesheet'
