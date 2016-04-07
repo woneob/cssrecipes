@@ -11,6 +11,10 @@ html(lang=config.language)
       name='description'
       content=truncate(page.description || config.description, {length: 160}))
 
+    meta(
+      name='author'
+      content=page.author || config.author)
+
     link(
       rel='stylesheet'
       href='/cssrecipes/styles/styles.css')
