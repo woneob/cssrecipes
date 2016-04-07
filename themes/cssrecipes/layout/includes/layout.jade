@@ -33,6 +33,10 @@ html(lang=config.language)
       rel='icon'
       href='/cssrecipes/images/icons/favicon.ico')
 
+    link(
+      rel='canonical'
+      href=config.url + config.root + page.canonical_path.replace('index.html', ''))
+
   body
     #menu-outer
       nav#menu-inner
