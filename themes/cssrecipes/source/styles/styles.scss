@@ -3,6 +3,12 @@
 @import "base/_reset";
 @import "base/_fonts";
 
+::selection {
+  background-color: rgba(117, 107, 101, .1);
+  color: #696059;
+  text-shadow: none;
+}
+
 html {
   background: #fff;
   text-size-adjust: none;
