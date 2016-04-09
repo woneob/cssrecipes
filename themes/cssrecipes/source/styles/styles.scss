@@ -18,3 +18,57 @@ body {
   letter-spacing: -.035rem;
   word-spacing: -.07rem;
 }
+
+.header {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 4rem 0 3rem;
+  text-align: center;
+  font-family: "Noto Sans KR", sans-serif;
+
+  .logotype {
+    font-weight: 500;
+    font-size: 4.5rem;
+    letter-spacing: -.03em;
+
+    a {
+      position: relative;
+      color: #ff8a8a;
+      text-shadow: .5rem 0 #fff, -.5rem 0 #fff;
+
+      &::after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        right: 0;
+        bottom: 12%;
+        left: 0;
+        display: none;
+        height: 0;
+        margin: auto;
+        border-bottom: .1rem dashed rgba(255, 0, 0, .3);
+      }
+
+      &:hover {
+        color: #fb7373;
+
+        &::after {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .desc {
+    font-weight: 300;
+    font-size: 1.3rem;
+    letter-spacing: .003em;
+    color: #948b83;
+  }
+}
+
+.main {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
