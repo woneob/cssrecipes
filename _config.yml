@@ -13,7 +13,7 @@ timezone: Asia/Seoul
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://1upnote.com
-root: /cssrecipes
+root: /
 permalink: :title/
 permalink_defaults:
 

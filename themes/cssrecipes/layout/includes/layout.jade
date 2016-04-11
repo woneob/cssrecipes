@@ -21,17 +21,17 @@ html(lang=config.language)
 
     link(
       rel='stylesheet'
-      href='/cssrecipes/styles/styles.css')
+      href=url_for('/styles/styles.css'))
 
     if page.styles !== undefined && page.styles.length
       each css in page.styles
         link(
           rel='stylesheet'
-          href=css)
+          href=url_for(css))
 
     link(
       rel='icon'
-      href='/cssrecipes/images/icons/favicon.ico')
+      href=url_for('/images/icons/favicon.ico'))
 
     link(
       rel='canonical'
@@ -50,9 +50,9 @@ html(lang=config.language)
         else
           block content
 
-    script(src='/cssrecipes/scripts/libraries/jquery/jquery.min.js')
-    script(src='/cssrecipes/scripts/common.js')
+    script(src=url_for('/scripts/libraries/jquery/jquery.min.js'))
+    script(src=url_for('/scripts/common.js'))
 
     if page.scripts !== undefined && page.scripts.length
       each script in page.scripts
-        script(src=script)
+        script(src=url_for(script))
